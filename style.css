@@ -1,31 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap');
 
 :root {
-  --accent: #84c2bb;
+  --accent: #9dd6d0;
   --accent-light: #a8ddd7;
   --white: #f2efe1;
-  --text: #858181;
-  --text-h: #696969;
+  --text-light: #858181;
+  --text-dark: #4d4848;
+  --bg-light: #d6d1d1;
 }
 
 *{
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
+
+}
+
+html {
+  height: 100%;
 }
 
 body {
   font-family: 'Nunito', sans-serif;
+  color: var(--text-dark);
+  font-weight: 400;
+  font-size: 16px;
   background: var(--accent);
   padding: 30px;
-  height: 100vh;
+  height: 100%;
 }
 h1, h2, h3, h4, h5, h6 {
-  color: var(--text-h);
+  color: var(--text-dark);
   font-weight: 500;
 }
+
+.wrapper-g {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
 .wrapper {
   background: var(--white);
   border-radius: 5px;
+  padding: 0 15px;
+  flex: 1 0 auto;
 }
 .header {
   display: flex;
@@ -33,8 +52,9 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 15px;
 }
 
+
 .new-task {
-  padding: 15px;
+  padding: 15px 0;
   display: flex;
 }
 .new-task__input {
@@ -46,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 5px;
   font-family: 'Nunito', sans-serif;
   font-size: 18px;
-  color: var(--text);
+  color: var(--text-light);
 }
 .new-task__input:focus {
   outline: none;
@@ -58,8 +78,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .new-task__btn {
   border-radius: 10px;
-  background: var(--accent-light);
-  border: none;
+  background: var(--white);
+  border: 1px solid var(--accent-light);
   height: 30px;
   color: var(--white);
   font-size: 27px;
@@ -68,19 +88,123 @@ h1, h2, h3, h4, h5, h6 {
 .new-task__btn svg {
   height: 22px;
   width: 22px;
-  fill: var(--white);
+  fill: var(--accent-light);
 }
 .new-task__btn:hover {
   transition: .2s;
-  background: var(--white);
+  background: var(--accent);
   border: 1px solid var(--accent-light);
-  color: var(--accent);
 }
 .new-task__btn:hover svg {
   transition: .2s;
-  fill: var(--accent);
+  fill: var(--white);
 }
-.list-task {
+.tasks {
+  margin-top: 15px;
+  border-top: 1px solid var(--accent-light);
 }
+.task-item {
+  font-size: 18px;
+  display: flex;
+  padding: 5px;
+  margin-top: 15px;
+  border-radius: 10px;
+  align-items: center;
+  background: #d7ebe9;
+}
+.task-item:hover .task__delete {
+  opacity: 1;
+  transition: .2s;
+}
+.task__delete {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--accent-light);
+  border-radius: 10px;
+  width: 50px;
+  height: 30px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 0;
+  transition: .2s;
+}
+.task__delete:hover {
+  transition: .2s;
+  background: var(--accent);
+  border: 1px solid var(--accent-light);
+}
+.task__delete:hover svg {
+  transition: .2s;
+  fill: var(--white);
+}
+.checkbox-input {
+  display: none;
+}
+.checkbox {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border: 1px solid var(--accent-light);
+  border-radius: 10px;
+  width: 50px;
+  height: 30px;
+  fill: var(--accent-light);
+}
+.checkbox svg {
+  display: none;
+}
+.checkbox:hover {
+  transition: .2s;
+  background: var(--accent);
+  border: 1px solid var(--accent-light);
+}
+.checkbox:hover svg {
+  display: block;
+  transition: .2s;
+  fill: var(--white);
+  width: 30px;
+  height: 30px;
+}
+.checkbox-input:checked + div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border: 1px solid var(--text-light);
+  border-radius: 10px;
+  width: 50px;
+  height: 30px;
+}
+.checkbox-input:checked + .checkbox svg {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  fill: var(--text-light);
+}
+.delete {
+  height: 20px;
+  width: 20px;
+  fill: var(--accent-light);
+}
+/* *********ACTIVE********* */
+.active {
+  background: var(--bg-light);
+  text-decoration: line-through;
+}
+.active button {
+  background: var(--white);
+  border: 1px solid var(--text-light);
+}
+.active svg {
+  fill: var(--text-light);
+}
+/* *************************** */
 .footer {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
 }

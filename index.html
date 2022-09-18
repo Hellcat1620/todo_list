@@ -8,23 +8,44 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrapper">
-    <header class="header">
-      <h1>Список дел</h1>
-    </header>
-    <div class="new-task">
-      <input class="new-task__input" type="text" placeholder="Новая задача..">
-      <button class="new-task__btn" type="submit">
-        <svg class="icon">
-          <use xlink:href="sprite.svg#plus"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="list-task">
-  
+  <div class="wrapper-g">
+    <div class="wrapper">
+      <header class="header">
+        <h1>Список дел</h1>
+      </header>
+      <div class="new-task">
+        <input class="new-task__input" type="text" placeholder="Новая задача..">
+        <button class="new-task__btn" type="submit">
+          <svg class="icon">
+            <use xlink:href="sprite.svg#plus"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="tasks">
+        <ul class="task-list">
+          <li class="task-item active">
+            <label>
+              <input class="checkbox-input" type="checkbox">
+              <div class="checkbox">
+                <svg class="icon">
+                  <use xlink:href="sprite.svg#checkbox"></use>
+                </svg>
+              </div>
+            </label>
+            <p class="task">
+              Купить продукты
+            </p>
+            <button class="task__delete">
+              <svg class="icon delete">
+                <use xlink:href="sprite.svg#delete"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
     <footer class="footer">
-  
+      <span class="copyright">© 2022 Анна Микина</span>
     </footer>
   </div>
   <script src="script.js"></script>
