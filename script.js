@@ -55,18 +55,14 @@ function tasksRender(list) {
         <label>
           <input class="checkbox-input" type="checkbox" ${checked}>
           <div class="checkbox">
-            <svg class="icon">
-              <use xlink:href="sprite.svg#checkbox"></use>
-            </svg>
+            &#10004
           </div>
         </label>
         <p class="task">
           ${task.text}
         </p>
         <button class="task__delete">
-          <svg class="icon delete">
-            <use xlink:href="sprite.svg#delete"></use>
-          </svg>
+          &#10006
         </button>
       </li>
     `
@@ -77,7 +73,7 @@ function tasksRender(list) {
   countTask(list)
 }
 
-dom.tasks.onclick = (event) => {
+dom.tasks.onclick = function(event) {
   const target = event.target
   const isCheckboxEl = target.classList.contains('checkbox')
   const isDeleteEl = target.classList.contains('task__delete')

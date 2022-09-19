@@ -51,8 +51,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   padding-top: 15px;
 }
-
-
+/*       NEW TASK       */
 .new-task {
   padding: 15px 0;
   display: flex;
@@ -75,30 +74,31 @@ h1, h2, h3, h4, h5, h6 {
 .new-task__input::placeholder {
   color: #c2bcbc;
 }
-
 .new-task__btn {
   border-radius: 10px;
   background: var(--white);
   border: 1px solid var(--accent-light);
   height: 30px;
-  color: var(--white);
-  font-size: 27px;
+  color: var(--accent);
+  font-size: 30px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 10%;
-}
-.new-task__btn svg {
-  height: 22px;
-  width: 22px;
-  fill: var(--accent-light);
 }
 .new-task__btn:hover {
   transition: .2s;
   background: var(--accent);
   border: 1px solid var(--accent-light);
+  color: var(--white);
 }
-.new-task__btn:hover svg {
-  transition: .2s;
-  fill: var(--white);
+
+.count-tasks {
+  margin-left: 5px;
+  color: var(--text-dark);
 }
+/*       TASKS       */
 .tasks {
   margin-top: 15px;
   border-top: 1px solid var(--accent-light);
@@ -122,7 +122,10 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   border: 1px solid var(--accent-light);
   border-radius: 10px;
-  width: 50px;
+  font-size: 22px;
+  line-height: 30px;
+  color: var(--accent);
+  min-width: 50px;
   height: 30px;
   justify-content: center;
   margin-left: auto;
@@ -132,11 +135,8 @@ h1, h2, h3, h4, h5, h6 {
 .task__delete:hover {
   transition: .2s;
   background: var(--accent);
-  border: 1px solid var(--accent-light);
-}
-.task__delete:hover svg {
-  transition: .2s;
-  fill: var(--white);
+  border: 1px solid var(--accent);
+  color: var(--white);
 }
 .checkbox-input {
   display: none;
@@ -151,56 +151,43 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 10px;
   width: 50px;
   height: 30px;
-  fill: var(--accent-light);
-}
-.checkbox svg {
-  display: none;
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0);
 }
 .checkbox:hover {
   transition: .2s;
   background: var(--accent);
-  border: 1px solid var(--accent-light);
-}
-.checkbox:hover svg {
-  display: block;
-  transition: .2s;
-  fill: var(--white);
-  width: 30px;
-  height: 30px;
+  border: 1px solid var(--accent);
+  color: var(--white);
+
 }
 .checkbox-input:checked + div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: var(--white);
+  color: var(--text-dark);
   border: 1px solid var(--text-light);
   border-radius: 10px;
   width: 50px;
   height: 30px;
 }
-.checkbox-input:checked + .checkbox svg {
-  display: flex;
-  width: 30px;
-  height: 30px;
-  fill: var(--text-light);
+.checkbox-input:checked + div:hover {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: var(--white);
 }
-.delete {
-  height: 20px;
-  width: 20px;
-  fill: var(--accent-light);
-}
-/* *********ACTIVE********* */
+/*           ACTIVE          */
 .active {
   background: var(--bg-light);
+}
+.active p {
   text-decoration: line-through;
+  color: var(--text-light);
 }
 .active button {
+  color: var(--text-dark);
   background: var(--white);
   border: 1px solid var(--text-light);
 }
-.active svg {
-  fill: var(--text-light);
-}
+
 /* *************************** */
 .footer {
   flex: 0 0 auto;
